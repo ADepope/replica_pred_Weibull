@@ -1,6 +1,7 @@
-Run on the HPC system would typically be executed as follows:
+Run on a HPC system would typically be executed as follows:
 
 ml python3
+
 lscpu
 
 export OMP_NUM_THREADS=4

@@ -97,7 +97,10 @@ def new_q_sampler(r, la, sigma, num_samples):
     gP0 = np.zeros(num_samples)
     for i in range(num_samples):
         # gP0[i] = den_beta(r1[i], r, la, sigma)
-        gP0[i] = den_beta_gaussian(r1[i], r, sigma)
+        if la == 1:
+            gP0[i] = den_beta_gaussian(r1[i], r, sigma)
+        else:
+            gP0[i] = den_beta(r1[i], r, la, sigma)
     return np.mean(gP0**2)
 
 def new_q(r, la, sigma, num_samples):
